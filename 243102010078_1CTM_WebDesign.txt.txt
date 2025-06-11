@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem QC Mesin Manufaktur</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff0f5;
+      margin: 0;
+      padding: 20px;
+      color: #555;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+    }
+    h1 {
+      color: #e75480;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #e75480;
+      border-bottom: 2px solid #ffb6c1;
+      padding-bottom: 8px;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #e75480;
+      margin-top: 20px;
+    }
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .section.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #e75480;
+    }
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ffb6c1;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #fffafa;
+    }
+    .btn {
+      padding: 12px 25px;
+      margin: 10px 5px;
+      background: #e75480;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #d23c6e;
+      transform: translateY(-2px);
+    }
+    .btn:disabled {
+      background: #ffb6c1;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: #ffb6c1;
+    }
+    .btn-secondary:hover {
+      background: #ff91a4;
+    }
+    .checklist-item {
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid #ffd6e0;
+      border-radius: 5px;
+      transition: all 0.3s;
+      background-color: #fffafa;
+    }
+    .checklist-item:hover {
+      background: #fff0f5;
+      border-color: #ffb6c1;
+    }
+    .checklist-item label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      cursor: pointer;
+      color: #555;
+    }
+    .checklist-item input[type="checkbox"] {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      accent-color: #e75480;
+    }
+    .result {
+      text-align: center;
+      padding: 30px;
+      border-radius: 5px;
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .passed {
+      background-color: #a8e6cf;
+      color: #1a3e2f;
+    }
+    .failed {
+      background-color: #ffaaa5;
+      color: #8b0000;
+    }
+    .repair-estimate {
+      background-color: #ffd3b6;
+      color: #d2691e;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .progress-bar {
+      height: 10px;
+      background: #ffd6e0;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      background: #e75480;
+      width: 25%;
+      transition: width 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .navigation-lock {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 182, 193, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+    .navigation-lock button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: white;
+      color: #e75480;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sistem Quality Control Mesin Manufaktur</h1>
+    
+    <div class="progress-bar">
+      <div class="progress" id="progressBar"></div>
+    </div>
+
+    <!-- Tahap 1: Informasi Dasar -->
+    <div class="section active" id="section1">
+      <h2>Tahap 1: Informasi QC</h2>
+      <div class="form-group">
+        <label for="inspectorName">Nama Inspektor QC</label>
+        <input type="text" id="inspectorName" required>
+      </div>
+      <div class="form-group">
+        <label for="inspectionDate">Tanggal Inspeksi</label>
+        <input type="date" id="inspectionDate" required>
+      </div>
+      <div class="form-group">
+        <label for="machineId">ID Mesin</label>
+        <input type="text" id="machineId" required>
+      </div>
+      <div class="form-group">
+        <label for="shift">Shift</label>
+        <select id="shift" required>
+          <option value="">Pilih Shift</option>
+          <option value="Pagi">Pagi (07:00 - 15:00)</option>
+          <option value="Sore">Sore (15:00 - 23:00)</option>
+          <option value="Malam">Malam (23:00 - 07:00)</option>
+        </select>
+      </div>
+      <button class="btn" id="nextBtn1" onclick="nextStep()">Lanjut ke Checklist QC</button>
+    </div>
+
+    <!-- Tahap 2: Checklist QC -->
+    <div class="section" id="section2">
+      <h2>Tahap 2: Checklist QC Mesin</h2>
+      
+      <h3>Pemeriksaan Fisik</h3>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="physical_condition"> Kondisi fisik mesin baik (tidak ada kerusakan/retak)</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="cleanliness"> Kebersihan mesin (bebas dari debu dan kotoran)</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="safety"> Semua pengaman/safety device berfungsi</label>
+      </div>
+      
+      <h3>Pemeriksaan Operasional</h3>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="startup"> Mesin dapat startup dengan normal</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="vibration"> Getaran mesin dalam batas normal</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="noise"> Tingkat kebisingan dalam batas normal</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="temperature"> Suhu operasi dalam batas normal</label>
+      </div>
+      
+      <h3>Pemeriksaan Output</h3>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="product_quality"> Kualitas produk sesuai standar</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="production_rate"> Laju produksi sesuai target</label>
+      </div>
+      
+      <h3>Pemeriksaan Sistem</h3>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="lubrication"> Sistem pelumasan bekerja dengan baik</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="cooling"> Sistem pendingin bekerja dengan baik</label>
+      </div>
+      <div class="checklist-item">
+        <label><input type="checkbox" name="qcCheck" value="electrical"> Sistem kelistrikan dalam kondisi baik</label>
+      </div>
+      
+      <button class="btn-secondary" id="backBtn2" onclick="prevStep()">Kembali</button>
+      <button class="btn" id="nextBtn2" onclick="validateQC()">Proses Hasil QC</button>
+    </div>
+
+    <!-- Tahap 3: Hasil QC -->
+    <div class="section" id="section3">
+      <h2>Tahap 3: Hasil Quality Control</h2>
+      
+      <div id="qcResult" class="result">
+        <!-- Hasil akan ditampilkan di sini -->
+      </div>
+      
+      <div id="repairEstimate" class="repair-estimate" style="display: none;">
+        <!-- Estimasi perbaikan akan ditampilkan di sini -->
+      </div>
+      
+      <div id="qcDetails">
+        <h3>Detail Inspeksi</h3>
+        <p><strong>Inspektor:</strong> <span id="resultInspector"></span></p>
+        <p><strong>Tanggal:</strong> <span id="resultDate"></span></p>
+        <p><strong>ID Mesin:</strong> <span id="resultMachineId"></span></p>
+        <p><strong>Shift:</strong> <span id="resultShift"></span></p>
+        <p><strong>Item yang diperiksa:</strong> <span id="checkedItems"></span>/12</p>
+      </div>
+      
+      <button class="btn-secondary" id="backBtn3" onclick="prevStep()" style="display: none;">Kembali ke Checklist</button>
+      <button class="btn" id="nextBtn3" onclick="nextStep()">Selesai</button>
+    </div>
+
+    <!-- Tahap 4: Selesai -->
+    <div class="section" id="section4">
+      <h2>Proses QC Selesai</h2>
+      <div class="result passed">
+        Data QC telah tersimpan
+      </div>
+      <p>Terima kasih telah melakukan Quality Control. Data hasil QC telah dicatat dalam sistem.</p>
+      
+      <div id="finalRepairInfo" style="display: none;">
+        <h3>Informasi Perbaikan</h3>
+        <p>Tim maintenance telah diberitahu untuk melakukan perbaikan sesuai estimasi.</p>
+        <p>Silakan cek email untuk detail lebih lanjut.</p>
+      </div>
+      
+      <button class="btn" onclick="resetForm()">Mulai QC Baru</button>
+    </div>
+  </div>
+
+  <div id="navigationLock" class="navigation-lock" style="display: none;">
+    <h2>Anda tidak dapat kembali ke tahap sebelumnya</h2>
+    <p>Sistem QC dirancang untuk proses satu arah untuk memastikan integritas data.</p>
+    <button onclick="hideNavigationLock()">Mengerti</button>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+    let qcPassed = false;
+    let repairDays = 0;
+    let allowBackNavigation = false;
+
+    function updateProgressBar() {
+      const progress = (currentStep / totalSteps) * 100;
+      document.getElementById('progressBar').style.width = ${progress}%;
+    }
+
+    function showStep(step) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(section${step}).classList.add('active');
+      updateProgressBar();
+      
+      // Sembunyikan tombol kembali di tahap 1
+      if (step === 1) {
+        document.getElementById('backBtn2').style.display = 'inline-block';
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+        allowBackNavigation = false;
+      }
+    }
+
+    function prevStep() {
+      if (allowBackNavigation && currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      } else {
+        showNavigationLock();
+      }
+    }
+
+    function validateQC() {
+      const checkboxes = document.querySelectorAll('input[name="qcCheck"]:checked');
+      const totalCheckboxes = document.querySelectorAll('input[name="qcCheck"]').length;
+      
+      // Minimal 10 dari 12 checklist harus terpenuhi untuk lolos QC
+      qcPassed = checkboxes.length >= 10;
+      repairDays = Math.ceil((totalCheckboxes - checkboxes.length) * 0.5); // 0.5 hari per item rusak
+      
+      // Tampilkan hasil
+      const resultDiv = document.getElementById('qcResult');
+      resultDiv.className = qcPassed ? 'result passed' : 'result failed';
+      resultDiv.textContent = qcPassed ? 'LOLOS QC' : 'TIDAK LOLOS QC';
+      
+      // Tampilkan estimasi perbaikan jika tidak lolos
+      const repairDiv = document.getElementById('repairEstimate');
+      if (!qcPassed) {
+        repairDiv.style.display = 'block';
+        repairDiv.innerHTML = Estimasi Perbaikan: ${repairDays} hari kerja;
+        document.getElementById('finalRepairInfo').style.display = 'block';
+      } else {
+        repairDiv.style.display = 'none';
+        document.getElementById('finalRepairInfo').style.display = 'none';
+      }
+      
+      // Isi detail inspeksi
+      document.getElementById('resultInspector').textContent = document.getElementById('inspectorName').value;
+      document.getElementById('resultDate').textContent = document.getElementById('inspectionDate').value;
+      document.getElementById('resultMachineId').textContent = document.getElementById('machineId').value;
+      document.getElementById('resultShift').textContent = document.getElementById('shift').value;
+      document.getElementById('checkedItems').textContent = checkboxes.length;
+      
+      nextStep();
+    }
+
+    function resetForm() {
+      // Reset form
+      document.getElementById('inspectorName').value = '';
+      document.getElementById('inspectionDate').value = '';
+      document.getElementById('machineId').value = '';
+      document.getElementById('shift').value = '';
+      
+      // Uncheck semua checkbox
+      document.querySelectorAll('input[name="qcCheck"]').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      
+      // Reset ke tahap 1
+      currentStep = 1;
+      showStep(currentStep);
+      allowBackNavigation = true;
+    }
+
+    function showNavigationLock() {
+      document.getElementById('navigationLock').style.display = 'flex';
+    }
+
+    function hideNavigationLock() {
+      document.getElementById('navigationLock').style.display = 'none';
+    }
+
+    // Inisialisasi tanggal hari ini
+    document.addEventListener('DOMContentLoaded', function() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('inspectionDate').value = today;
+      updateProgressBar();
+      
+      // Validasi input di setiap tahap
+      document.getElementById('nextBtn1').addEventListener('click', function(e) {
+        const inspectorName = document.getElementById('inspectorName').value;
+        const machineId = document.getElementById('machineId').value;
+        const shift = document.getElementById('shift').value;
+        
+        if (!inspectorName || !machineId || !shift) {
+          e.preventDefault();
+          alert('Harap lengkapi semua informasi QC sebelum melanjutkan!');
+        } else {
+          allowBackNavigation = true;
+        }
+      });
+      
+      // Sembunyikan tombol kembali di tahap 3
+      document.getElementById('backBtn3').style.display = 'none';
+    });
+
+    // Blokir navigasi browser
+    window.addEventListener('popstate', function(event) {
+      if (!allowBackNavigation) {
+        showNavigationLock();
+        history.pushState(null, null, window.location.href);
+      }
+    });
+    history.pushState(null, null, window.location.href);
+  </script>
+</body>
+</html>

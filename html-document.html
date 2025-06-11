@@ -1,0 +1,3011 @@
+
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jual Beli Baut Nusantara</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    :root {
+      --primary-color: #0066cc;
+      --secondary-color: #ff6600;
+      --accent-color: #00cc66;
+      --dark-gray: #333333;
+      --medium-gray: #666666;
+      --light-gray: #f5f5f5;
+      --light-border: #e0e0e0;
+      --white: #ffffff;
+      --success: #28a745;
+      --warning: #ffc107;
+      --danger: #dc3545;
+      --info: #17a2b8;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: var(--light-gray);
+      margin: 0;
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    /* Header Styles */
+    .announcement-bar {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      text-align: center;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header {
+      background-color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo h1 {
+      color: var(--primary-color);
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .search-container {
+      flex: 1;
+      max-width: 500px;
+      margin: 0 20px;
+    }
+
+    .search-form {
+      display: flex;
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .search-button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .search-button:hover {
+      background-color: #0055aa;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-action-btn {
+      background: none;
+      border: none;
+      color: var(--dark-gray);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+      position: relative;
+    }
+
+    .header-action-btn i {
+      font-size: 20px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--secondary-color);
+      color: var(--white);
+      font-size: 12px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Navigation */
+    .main-nav {
+      background-color: var(--white);
+      padding: 10px 0;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--dark-gray);
+      padding: 8px 15px;
+      display: block;
+      font-weight: 500;
+      transition: var(--transition);
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-link:hover, 
+    .nav-link.active {
+      color: var(--primary-color);
+      background-color: rgba(0, 102, 204, 0.1);
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding: 30px 0;
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 24px;
+      color: var(--dark-gray);
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    .view-all {
+      color: var(--primary-color);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Product Grid & Cards */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    .badge-new {
+      background-color: var(--secondary-color);
+      color: var(--white);
+    }
+
+    .badge-sale {
+      background-color: var(--danger);
+      color: var(--white);
+    }
+
+    .badge-best {
+      background-color: var(--accent-color);
+      color: var(--white);
+    }
+
+    .product-image {
+      position: relative;
+      padding-top: 75%;
+      background-color: #fafafa;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-category {
+      color: var(--medium-gray);
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--dark-gray);
+      line-height: 1.3;
+    }
+
+    .product-price {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--dark-gray);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: var(--medium-gray);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .sale-price {
+      color: var(--danger);
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
+
+    .rating-stars {
+      color: var(--warning);
+      font-size: 14px;
+    }
+
+    .rating-count {
+      color: var(--medium-gray);
+      font-size: 12px;
+    }
+
+    .product-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: var(--white);
+      flex: 1;
+    }
+
+    .btn-primary:hover {
+      background-color: #0055aa;
+    }
+
+    .btn-icon {
+      background-color: var(--light-gray);
+      color: var(--dark-gray);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .btn-icon:hover {
+      background-color: var(--light-border);
+    }
+
+    /* Filters and Categories */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filter-tag {
+      background-color: var(--white);
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 14px;
+      color: var(--dark-gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-tag:hover, 
+    .filter-tag.active {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-color: var(--primary-color);
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-item {
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .gallery-image {
+      position: relative;
+      padding-top: 65%;
+      overflow: hidden;
+    }
+
+    .gallery-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-image img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 15px;
+    }
+
+    .gallery-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--dark-gray);
+      margin-bottom: 8px;
+    }
+
+    .gallery-desc {
+      color: var(--medium-gray);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* About Us Section */
+    .about-section {
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-section h3 {
+      font-size: 20px;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .about-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+
+    .about-section p {
+      margin-bottom: 15px;
+    }
+
+    .about-section ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .about-section li {
+      margin-bottom: 8px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .team-member h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      color: var(--medium-gray);
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 102, 204, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 18px;
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-size: 14px;
+      color: var(--medium-gray);
+    }
+
+    .contact-value {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--dark-gray);
+    }
+
+    /* Cart */
+    .cart-section {
+      background-color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 40px;
+    }
+
+    .cart-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--dark-gray);
+      border-bottom: 1px solid var(--light-border);
+      padding-bottom: 15px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .cart-empty-icon {
+      font-size: 60px;
+      color: var(--light-border);
+      margin-bottom: 20px;
+    }
+
+    .cart-empty-text {
+      font-size: 18px;
+      color: var(--medium-gray);
+      margin-bottom: 20px;
+    }
+
+    .cart-items {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .cart-items th {
+      background-color: var(--light-gray);
+      padding: 12px 15px;
+      text-align: left;
+      font-weight: 500;
+      color: var(--dark-gray);
+    }
+
+    .cart-items td {
+      padding: 15px;
+      border-bottom: 1px solid var(--light-border);
+      vertical-align: middle;
+    }
+
+    .cart-product {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cart-product-image {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+      background-color: var(--light-gray);
+    }
+
+    .cart-product-info h4 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: var(--dark-gray);
+    }
+
+    .cart-product-info p {
+      font-size: 12px;
+      color: var(--medium-gray);
+    }
+
+    .cart-price {
+      font-weight: 500;
+    }
+
+    .cart-quantity {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .quantity-btn {
+      width: 28px;
+      height: 28px;
+      background-color: var(--light-gray);
+      border: none;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .quantity-input {
+      width: 40px;
+      height: 28px;
+      text-align: center;
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-sm);
+    }
+
+    .cart-subtotal {
+      font-weight: 500;
+    }
+
+    .cart-remove {
+      color: var(--danger);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .cart-summary {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .summary-box {
+      width: 100%;
+      max-width: 400px;
+      background-color: var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .summary-row:last-child {
+      margin-bottom: 0;
+      padding-top: 15px;
+      border-top: 1px solid var(--light-border);
+    }
+
+    .summary-label {
+      color: var(--medium-gray);
+    }
+
+    .summary-value {
+      font-weight: 500;
+    }
+
+    .summary-total {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark-gray);
+    }
+
+    /* Checkout Steps */
+    .checkout-steps {
+      margin-top: 30px;
+      border-top: 1px solid var(--light-border);
+      padding-top: 30px;
+    }
+
+    .step-indicator {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--light-border);
+      z-index: 1;
+    }
+
+    .step:first-child::before {
+      left: 50%;
+    }
+
+    .step:last-child::before {
+      width: 50%;
+    }
+
+    .step-number {
+      width: 30px;
+      height: 30px;
+      background-color: var(--light-gray);
+      border: 2px solid var(--light-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      position: relative;
+      z-index: 2;
+      font-weight: 500;
+      color: var(--medium-gray);
+    }
+
+    .step.active .step-number {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: var(--white);
+    }
+
+    .step.completed .step-number {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--white);
+    }
+
+    .step-label {
+      font-size: 14px;
+      color: var(--medium-gray);
+    }
+
+    .step.active .step-label {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    .checkout-form {
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark-gray);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      padding: 50px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--secondary-color);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background-color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* Utility Classes */
+    .d-none {
+      display: none !important;
+    }
+
+    .mt-30 {
+      margin-top: 30px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Dark Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      z-index: 999;
+      background-color: var(--white);
+      border-radius: 30px;
+      padding: 5px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-label {
+      margin-right: 8px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: var(--transition);
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--primary-color);
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(18px);
+    }
+
+    /* Loader */
+    .loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--light-gray);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Product Details Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--medium-gray);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .product-detail {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product-detail-images {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+    }
+
+    .product-detail-info {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+      border-left: 1px solid var(--light-border);
+    }
+
+    .product-detail-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    @keyframes modalFadeIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .header-top {
+        flex-wrap: wrap;
+      }
+      
+      .logo {
+        order: 1;
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .search-container {
+        order: 3;
+        max-width: none;
+        width: 100%;
+        margin: 15px 0 0;
+      }
+      
+      .header-actions {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .nav-list {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+      
+      .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+      
+      .cart-items th:nth-child(4),
+      .cart-items td:nth-child(4) {
+        display: none;
+      }
+      
+      .modal-content {
+        width: 95%;
+      }
+      
+      .product-detail-images,
+      .product-detail-info {
+        flex: 100%;
+        border-left: none;
+      }
+      
+      .product-detail-info {
+        border-top: 1px solid var(--light-border);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cart-items {
+        display: block;
+      }
+      
+      .cart-items thead {
+        display: none;
+      }
+      
+      .cart-items tbody, .cart-items tr, .cart-items td {
+        display: block;
+        width: 100%;
+      }
+      
+      .cart-items tr {
+        margin-bottom: 20px;
+        border: 1px solid var(--light-border);
+        border-radius: var(--radius-md);
+        padding: 15px;
+      }
+      
+      .cart-items td {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--light-border);
+      }
+      
+      .cart-items td:last-child {
+        border-bottom: none;
+      }
+      
+      .cart-items td::before {
+        content: attr(data-label);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .cart-product {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .cart-summary {
+        justify-content: center;
+      }
+      
+      .theme-toggle {
+        top: auto;
+        bottom: 80px;
+        right: 20px;
+      }
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .header,
+    body.dark-mode .main-nav,
+    body.dark-mode .product-card,
+    body.dark-mode .gallery-item,
+    body.dark-mode .about-section,
+    body.dark-mode .cart-section,
+    body.dark-mode .modal-content {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .announcement-bar {
+      background-color: #000;
+    }
+
+    body.dark-mode .search-form {
+      border-color: #333;
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .search-input {
+      background-color: #2a2a2a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .nav-link,
+    body.dark-mode .header-action-btn,
+    body.dark-mode .product-title,
+    body.dark-mode .gallery-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .nav-link:hover, 
+    body.dark-mode .nav-link.active {
+      background-color: rgba(0, 102, 204, 0.2);
+    }
+
+    body.dark-mode .section-title,
+    body.dark-mode .about-section h3,
+    body.dark-mode .cart-title,
+    body.dark-mode .product-detail-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .product-category,
+    body.dark-mode .gallery-desc,
+    body.dark-mode .team-member p,
+    body.dark-mode .contact-label,
+    body.dark-mode .summary-label {
+      color: #aaa;
+    }
+
+    body.dark-mode .product-image,
+    body.dark-mode .btn-icon,
+    body.dark-mode .cart-product-image,
+    body.dark-mode .quantity-btn {
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .filter-tag {
+      background-color: #2a2a2a;
+      border-color: #333;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .cart-items th {
+      background-color: #2a2a2a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .cart-items td {
+      border-color: #333;
+    }
+
+    body.dark-mode .quantity-input,
+    body.dark-mode .form-control {
+      background-color: #2a2a2a;
+      border-color: #333;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .summary-box {
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .summary-row:last-child {
+      border-color: #333;
+    }
+
+    body.dark-mode .step::before {
+      background-color: #333;
+    }
+
+    body.dark-mode .step-number {
+      background-color: #2a2a2a;
+      border-color: #333;
+      color: #aaa;
+    }
+
+    body.dark-mode .loader-overlay {
+      background-color: #121212;
+    }
+
+    body.dark-mode .theme-toggle {
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .toggle-label {
+      color: #e0e0e0;
+    }
+
+    /* Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      
+      #invoice-print, #invoice-print * {
+        visibility: visible;
+      }
+      
+      #invoice-print {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 40px;
+        background: white;
+        color: black;
+      }
+    }
+</style>
+<script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script></head>
+<body>
+<!-- Loader -->
+<div class="loader-overlay" id="loader">
+  <div class="loader"></div>
+</div>
+
+<!-- Theme Toggle -->
+<div class="theme-toggle">
+  <span class="toggle-label">🌙 Mode Gelap</span>
+  <label class="toggle-switch">
+    <input type="checkbox" id="darkModeToggle">
+    <span class="toggle-slider"></span>
+  </label>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  Gratis Ongkir minimal belanja Rp. 50.000
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="logo">
+        <h1>Jual Beli Baut Nusantara</h1>
+      </div>
+      <div class="search-container">
+        <form class="search-form" onsubmit="handleSearch(event)">
+          <input type="text" class="search-input" placeholder="Cari Produk, Kode Part..." id="searchInput">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="header-actions">
+        <button class="header-action-btn" onclick="showCart()">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Keranjang</span>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+    
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#semua-produk" class="nav-link active" onclick="showSection('semua-produk')">Semua Produk</a>
+        </li>
+        <li class="nav-item">
+          <a href="#produk-terbaru" class="nav-link" onclick="showSection('produk-terbaru')">Produk Terbaru</a>
+        </li>
+        <li class="nav-item">
+          <a href="#produk-diskon" class="nav-link" onclick="showSection('produk-diskon')">Produk Diskon</a>
+        </li>
+        <li class="nav-item">
+          <a href="#gallery" class="nav-link" onclick="showSection('gallery')">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#tentang-kami" class="nav-link" onclick="showSection('tentang-kami')">Tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a href="#kontak" class="nav-link" onclick="showSection('kontak')">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="container">
+    <!-- All Products Section -->
+    <section id="semua-produk" class="content">
+      <div class="section-header">
+        <h2 class="section-title">Semua Produk</h2>
+      </div>
+      
+      <div class="filters">
+        <span class="filter-tag active">Semua</span>
+        <span class="filter-tag">Stainless Steel</span>
+        <span class="filter-tag">Baja Hitam</span>
+        <span class="filter-tag">Galvanis</span>
+        <span class="filter-tag">Kepala L</span>
+        <span class="filter-tag">Kepala Bintang</span>
+        <span class="filter-tag">Kombinasi</span>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="stainless%20steal%208x15.jfif" alt="Baut Stainless Steel 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Stainless Steel</span>
+            <h3 class="product-title">Baut Stainless Steel 8x25</h3>
+            <div class="product-price">Rp 4.500</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">(18)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod1', 'Baut Stainless Steel 8x25', 4500, 'Bautstainless.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20baja%20hitam%208.8%20m8%20-%201.25x30.jpg" alt="Baut Baja Hitam 8-1,25x30">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Baja Hitam</span>
+            <h3 class="product-title">Baut Baja Hitam 8-1,25x30</h3>
+            <div class="product-price">Rp 3.800</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(12)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod2', 'Baut Baja Hitam 8-1,25x30', 3800, 'Bautbajahitam.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20l%20m8x25.jpg" alt="Baut Kepala L 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Kepala L</span>
+            <h3 class="product-title">Baut Kepala L 8x25</h3>
+            <div class="product-price">Rp 5.200</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="rating-count">(23)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod3', 'Baut Kepala L 8x25', 5200, 'Kepala%20L.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20flange%20galvanis%208x25.jpg" alt="Baut Flange Galvanis 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Galvanis</span>
+            <h3 class="product-title">Baut Flange Galvanis 8x25</h3>
+            <div class="product-price">Rp 4.200</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(9)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod4', 'Baut Flange Galvanis 8x25', 4200, 'Galvanis.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+          <span class="product-badge badge-sale">Diskon</span>
+          <div class="product-image">
+            <img src="baut%20baja%20hitam%208.8%20m8%20-%201.25x30.jpg" alt="Baut Baja Hitam 8-1,25x30(Diskon)">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Baja Hitam</span>
+            <h3 class="product-title">Baut Baja Hitam 8-1,25x30(Diskon)</h3>
+            <div class="product-price">
+              <span class="original-price">Rp 3.800</span>
+              <span class="sale-price">Rp 2.900</span>
+            </div>
+            <p style="color: #dc3545; font-size: 12px; margin-bottom: 10px;">*Berlaku hanya sekali beli</p>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(7)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod5', 'Baut Baja Hitam 8-1,25x30(Diskon)', 2900, 'Bautbajahitam.jpg', 3800)">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <span class="product-badge badge-sale">Diskon</span>
+          <div class="product-image">
+            <img src="baut%20flange%20galvanis%208x25.jpg" alt="Baut Flange Galvanis 8x25(Diskon)">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Galvanis</span>
+            <h3 class="product-title">Baut Flange Galvanis 8x25(Diskon)</h3>
+            <div class="product-price">
+              <span class="original-price">Rp 4.200</span>
+              <span class="sale-price">Rp 3.200</span>
+            </div>
+            <p style="color: #dc3545; font-size: 12px; margin-bottom: 10px;">*Berlaku hanya sekali beli</p>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(14)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod6', 'Baut Flange Galvanis 8x25(Diskon)', 3200, 'Galvanis.jpg', 4200)">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 7 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="baut%20bintang%208x24.jfif" alt="Baut Kepala Bintang 8x24">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Kepala Bintang</span>
+            <h3 class="product-title">Baut Kepala Bintang 8x24</h3>
+            <div class="product-price">Rp 4.800</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(11)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod7', 'Baut Kepala Bintang 8x24', 4800, 'Kepala%20Bintang.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 8 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="set%20kombinasi%20sekrup%20dan%20mur.jfif" alt="Baut Set Kombinasi Sekrup dan Mur">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Kombinasi</span>
+            <h3 class="product-title">Baut Set Kombinasi Sekrup dan Mur</h3>
+            <div class="product-price">Rp 5.500</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">(19)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod8', 'Baut Set Kombinasi Sekrup dan Mur', 5500, 'bautmur.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 9 -->
+        <div class="product-card">
+          <span class="product-badge badge-best">Terlaris</span>
+          <div class="product-image">
+            <img src="baut%20roofing%205cm%20anti%20karat.jfif" alt="Baut Roofing 5cm Anti Karat">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Anti Karat</span>
+            <h3 class="product-title">Baut Roofing 5cm Anti Karat</h3>
+            <div class="product-price">Rp 6.000</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="rating-count">(42)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod9', 'Baut Roofing 5cm Anti Karat', 6000, 'bautoutdoor.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- New Products Section -->
+    <section id="produk-terbaru" class="content d-none">
+      <div class="section-header">
+        <h2 class="section-title">Produk Terbaru</h2>
+        <a href="#semua-produk" class="view-all" onclick="showSection('semua-produk')">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="stainless%20steal%208x15.jfif" alt="BBaut Stainless Steel 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Stainless Steel</span>
+            <h3 class="product-title">Baut Stainless Steel 8x25</h3>
+            <div class="product-price">Rp 4.500</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">(18)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod1', 'Baut Stainless Steel 8x25', 4500, 'Bautstainless.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20baja%20hitam%208.8%20m8%20-%201.25x30.jpg" alt="Baut Baja Hitam 8-1,25x30">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Baja Hitam</span>
+            <h3 class="product-title">Baut Baja Hitam 8-1,25x30</h3>
+            <div class="product-price">Rp 3.800</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(12)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod2', 'Baut Baja Hitam 8-1,25x30', 3800, 'Bautbajahitam.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20l%20m8x25.jpg" alt="Baut Kepala L 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Kepala L</span>
+            <h3 class="product-title">Baut Kepala L 8x25</h3>
+            <div class="product-price">Rp 5.200</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="rating-count">(23)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod3', 'Baut Kepala L 8x25', 5200, 'Kepala%20L.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Terbaru</span>
+          <div class="product-image">
+            <img src="baut%20flange%20galvanis%208x25.jpg" alt="Baut Flange Galvanis 8x25">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Galvanis</span>
+            <h3 class="product-title">Baut Flange Galvanis 8x25</h3>
+            <div class="product-price">Rp 4.200</div>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(9)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod4', 'Baut Flange Galvanis 8x25', 4200, 'Galvanis.jpg')">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Discounted Products Section -->
+    <section id="produk-diskon" class="content d-none">
+      <div class="section-header">
+        <h2 class="section-title">Produk Diskon</h2>
+        <a href="#semua-produk" class="view-all" onclick="showSection('semua-produk')">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Product 5 -->
+        <div class="product-card">
+          <span class="product-badge badge-sale">Diskon</span>
+          <div class="product-image">
+            <img src="baut%20baja%20hitam%208.8%20m8%20-%201.25x30.jpg" alt="Baut Baja Hitam 8-1,25x30(Diskon)">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Baja Hitam</span>
+            <h3 class="product-title">Baut Baja Hitam 8-1,25x30(Diskon)</h3>
+            <div class="product-price">
+              <span class="original-price">Rp 3.800</span>
+              <span class="sale-price">Rp 2.900</span>
+            </div>
+            <p style="color: #dc3545; font-size: 12px; margin-bottom: 10px;">*Berlaku hanya sekali beli</p>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(7)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod5', 'Baut Baja Hitam 8-1,25x30(Diskon)', 2900, 'Bautbajahitam.jpg', 3800)">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <span class="product-badge badge-sale">Diskon</span>
+          <div class="product-image">
+            <img src="baut%20flange%20galvanis%208x25.jpg" alt="Baut Flange Galvanis 8x25(Diskon)">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Galvanis</span>
+            <h3 class="product-title">Baut Flange Galvanis 8x25(Diskon)</h3>
+            <div class="product-price">
+              <span class="original-price">Rp 4.200</span>
+              <span class="sale-price">Rp 3.200</span>
+            </div>
+            <p style="color: #dc3545; font-size: 12px; margin-bottom: 10px;">*Berlaku hanya sekali beli</p>
+            <div class="product-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">(14)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('prod6', 'Baut Flange Galvanis 8x25(Diskon)', 3200, 'Galvanis.jpg', 4200)">
+                <i class="fas fa-shopping-cart"></i> Beli
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="content d-none">
+      <div class="section-header">
+        <h2 class="section-title">Gallery Produk dan Aktivitas Kami</h2>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="stainless%20steal%208x15.jfif" alt="Produk Stainless Steel">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Produk Stainless Steel</h3>
+            <p class="gallery-desc">Koleksi baut stainless steel berkualitas tinggi kami, ideal untuk lingkungan lembap dan korosif, memberikan daya tahan luar biasa dan penampilan yang elegan.</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="baut%20baja%20hitam%208.8%20m8%20-%201.25x30.jpg" alt="Produk Baja Hitam">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Produk Baja Hitam</h3>
+            <p class="gallery-desc">Baut baja hitam dengan ketahanan tinggi terhadap beban berat, cocok untuk konstruksi bangunan dan aplikasi teknik berat.</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="baut%20l%20m8x25.jpg" alt="Baut Kepala L">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Baut Kepala L</h3>
+            <p class="gallery-desc">Solusi untuk kebutuhan khusus dengan desain kepala L yang memudahkan pemasangan di area terbatas atau sudut sempit.</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="set%20kombinasi%20sekrup%20dan%20mur.jfif" alt="Paket Baut + Mur">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Paket Komplit</h3>
+            <p class="gallery-desc">Baut lengkap dengan mur untuk kebutuhan praktis, memberikan solusi cepat dan aman dalam pemasangan berbagai jenis material.</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="baut%20roofing%205cm%20anti%20karat.jfif" alt="Baut Anti Karat">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Baut Outdoor</h3>
+            <p class="gallery-desc">Khusus untuk penggunaan outdoor dengan perlindungan anti karat maksimal, sangat cocok untuk infrastruktur luar ruangan.</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="baut%20bintang%208x24.jfif" alt="Baut Kepala Bintang">
+          </div>
+          <div class="gallery-caption">
+            <h3 class="gallery-title">Baut Kepala Bintang</h3>
+            <p class="gallery-desc">Dengan kepala bintang untuk kebutuhan keamanan tinggi, sulit dilepas tanpa alat khusus sehingga cocok untuk perlindungan aset.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section id="tentang-kami" class="content d-none">
+      <div class="section-header">
+        <h2 class="section-title">Tentang Jual Beli Baut Nusantara</h2>
+      </div>
+      
+      <div class="about-section">
+        <h3>Visi Kami</h3>
+        <p>Menjadi penyedia produk baut dan perlengkapan teknik terdepan di Indonesia dengan kualitas terbaik dan pelayanan prima.</p>
+      </div>
+      
+      <div class="about-section">
+        <h3>Misi Kami</h3>
+        <ul>
+          <li>Menyediakan produk baut berkualitas tinggi dengan harga kompetitif</li>
+          <li>Memberikan solusi lengkap untuk kebutuhan teknik dan konstruksi</li>
+          <li>Memberikan pelayanan terbaik kepada pelanggan dengan profesionalisme tinggi</li>
+          <li>Mengembangkan jaringan distribusi yang luas untuk menjangkau seluruh Indonesia</li>
+        </ul>
+      </div>
+      
+      <div class="about-section">
+        <h3>Sejarah Perusahaan</h3>
+        <p>Jual Beli Baut Nusantara didirikan pada tahun 2005 dengan semangat untuk menyediakan produk baut berkualitas bagi industri dan perorangan. Dimulai dari sebuah toko kecil di pusat kota, kami telah berkembang menjadi salah satu distributor baut terpercaya dengan ribuan pelanggan setia.</p>
+        <p>Sepanjang perjalanan kami, komitmen terhadap kualitas dan kepuasan pelanggan tidak pernah berubah. Kami terus berinovasi dan memperluas jaringan untuk melayani kebutuhan Anda dengan lebih baik.</p>
+      </div>
+      
+      <div class="about-section">
+        <h3>Tim Kami</h3>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="Goat.jpg" alt="Direktur">
+            <h4>Maharaja Daffi Adjie G. O. A. T.</h4>
+            <p>Direktur</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="Maharaja%20Bobby.jpeg" alt="Manajer Penjualan">
+            <h4>Prof. Drs. H. IR. Agalos Bobby A. I.</h4>
+            <p>Manajer Penjualan</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="rizal.jpg" alt="Kepala Gudang">
+            <h4>M Arizal A.Md.T.</h4>
+            <p>Kepala Gudang</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="susanto.jpg" alt="Customer Service">
+            <h4>Jason Susant</h4>
+            <p>Customer Service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="kontak" class="content d-none">
+      <div class="section-header">
+        <h2 class="section-title">Hubungi Kami</h2>
+      </div>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="contact-details">
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">0811111111</div>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="far fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">Bautnusantara@gmail.com</div>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-details">
+            <div class="contact-label">Alamat Toko</div>
+            <div class="contact-value">Jl. Pahlawan No. 123, Jakarta Pusat</div>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="far fa-clock"></i>
+          </div>
+          <div class="contact-details">
+            <div class="contact-label">Jam Operasional</div>
+            <div class="contact-value">Senin - Sabtu: 08.00 - 17.00 WIB</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-section">
+        <h3>Kirim Pesan</h3>
+        <form id="contact-form" class="mt-30">
+          <div class="form-group">
+            <label for="name" class="form-label">Nama Lengkap</label>
+            <input type="text" id="name" class="form-control" placeholder="Masukkan nama lengkap Anda">
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Masukkan alamat email Anda">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Nomor Telepon</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor telepon Anda">
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Pesan</label>
+            <textarea id="message" class="form-control" rows="5" placeholder="Tulis pesan Anda disini..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+    
+    <!-- Cart Section -->
+    <section id="keranjang" class="cart-section d-none">
+      <h2 class="cart-title">Keranjang Belanja</h2>
+      
+      <div class="cart-empty d-none" id="emptyCart">
+        <div class="cart-empty-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="cart-empty-text">Keranjang Belanja Anda Kosong</div>
+        <button class="btn btn-primary" onclick="showSection('semua-produk')">Lanjutkan Belanja</button>
+      </div>
+      
+      <div id="cartContent">
+        <table class="cart-items">
+          <thead>
+            <tr>
+              <th>Produk</th>
+              <th>Harga</th>
+              <th>Jumlah</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-body">
+            <!-- Cart items will be added here dynamically -->
+          </tbody>
+        </table>
+        
+        <div class="cart-summary">
+          <div class="summary-box">
+            <div class="summary-row">
+              <span class="summary-label">Subtotal</span>
+              <span class="summary-value" id="cart-subtotal">Rp 0</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Ongkos Kirim</span>
+              <span class="summary-value" id="shipping-cost">Gratis</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label summary-total">Total</span>
+              <span class="summary-value summary-total" id="cart-total">Rp 0</span>
+            </div>
+            <button class="btn btn-primary mt-30" onclick="startCheckout()">Lanjut ke Pembayaran</button>
+          </div>
+        </div>
+        
+        <!-- Checkout Steps -->
+        <div class="checkout-steps d-none" id="checkoutSteps">
+          <div class="step-indicator">
+            <div class="step active" data-step="1">
+              <div class="step-number">1</div>
+              <div class="step-label">Data Alamat</div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-number">2</div>
+              <div class="step-label">Konfirmasi Pesanan</div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-number">3</div>
+              <div class="step-label">Metode Pembayaran</div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-number">4</div>
+              <div class="step-label">Transaksi Selesai</div>
+            </div>
+          </div>
+          
+          <div class="checkout-form">
+            <!-- Step 1: Customer Data -->
+            <div class="checkout-step active" id="step-1">
+              <h3>1. Isi Data Alamat & Kontak</h3>
+              <div class="form-group">
+                <label for="inputNama" class="form-label">Nama Lengkap</label>
+                <input type="text" id="inputNama" class="form-control" placeholder="Masukkan nama lengkap" required>
+              </div>
+              <div class="form-group">
+                <label for="inputAlamat" class="form-label">Alamat Lengkap</label>
+                <input type="text" id="inputAlamat" class="form-control" placeholder="Masukkan alamat lengkap" required>
+              </div>
+              <div class="form-group">
+                <label for="inputTelepon" class="form-label">Nomor Telepon</label>
+                <input type="tel" id="inputTelepon" class="form-control" placeholder="Masukkan nomor telepon" required>
+              </div>
+              <button class="btn btn-primary" onclick="goToStep(2)">Lanjut</button>
+            </div>
+            
+            <!-- Step 2: Order Confirmation -->
+            <div class="checkout-step" id="step-2">
+              <h3>2. Konfirmasi Produk & Ongkir</h3>
+              <div id="produkCheckout" class="mt-30"></div>
+              <div class="summary-box mt-30">
+                <div class="summary-row">
+                  <span class="summary-label">Subtotal</span>
+                  <span class="summary-value" id="checkoutSubtotal">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Ongkir</span>
+                  <span class="summary-value" id="checkoutOngkir">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label summary-total">Total</span>
+                  <span class="summary-value summary-total" id="checkoutTotal">Rp 0</span>
+                </div>
+              </div>
+              <button class="btn btn-primary mt-30" onclick="goToStep(3)">Lanjut</button>
+            </div>
+            
+            <!-- Step 3: Payment Method -->
+            <div class="checkout-step" id="step-3">
+              <h3>3. Pilih Metode Pembayaran</h3>
+              <div class="form-group">
+                <label for="inputMetodePengiriman" class="form-label">Metode Pengiriman</label>
+                <select id="inputMetodePengiriman" class="form-control">
+                  <option value="Reguler">Pengiriman Reguler (2-4 hari)</option>
+                  <option value="Express">Pengiriman Express (1 hari)</option>
+                  <option value="Pickup">Ambil Sendiri</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputMetodePembayaran" class="form-label">Metode Pembayaran</label>
+                <select id="inputMetodePembayaran" class="form-control">
+                  <option value="Transfer Bank">Transfer Bank</option>
+                  <option value="COD">COD (Bayar di Tempat)</option>
+                  <option value="E-Wallet">E-Wallet (OVO, GoPay, Dana)</option>
+                </select>
+              </div>
+              <button class="btn btn-primary mt-30" onclick="goToStep(4)">Lanjut</button>
+            </div>
+            
+            <!-- Step 4: Completion -->
+            <div class="checkout-step" id="step-4">
+              <div class="text-center">
+                <div style="font-size: 60px; color: var(--accent-color); margin-bottom: 20px;">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Transaksi Selesai</h3>
+                <p>Terima kasih <span id="namaAkhir"></span>! Transaksi Anda berhasil.</p>
+                <div class="summary-box mt-30">
+                  <div class="summary-row">
+                    <span class="summary-label">Metode Pembayaran</span>
+                    <span class="summary-value" id="metodeAkhir"></span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="summary-label">Metode Pengiriman</span>
+                    <span class="summary-value" id="pengirimanAkhir"></span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="summary-label">Alamat Pengiriman</span>
+                    <span class="summary-value" id="alamatAkhir"></span>
+                  </div>
+                </div>
+                <button class="btn btn-primary mt-30" onclick="generateInvoice()">
+                  <i class="fas fa-file-invoice"></i> Cetak Invoice
+                </button>
+                <div style="margin-top: 30px; padding: 20px; background-color: rgba(0, 102, 204, 0.1); border-radius: var(--radius-md);">
+                  <div style="font-size: 18px; color: var(--primary-color); margin-bottom: 10px;">
+                    <i class="fas fa-info-circle"></i> Informasi Penting
+                  </div>
+                  <p>Transaksi telah selesai! Terima kasih telah berbelanja di Jual Beli Baut Nusantara. Kami akan segera memproses pesanan Anda.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Jual Beli Baut Nusantara</h4>
+        <p>Menyediakan berbagai macam baut berkualitas untuk kebutuhan industri dan rumah tangga Anda. Kami berkomitmen untuk memberikan produk terbaik dengan harga terjangkau.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Kategori Produk</h4>
+        <ul class="footer-links">
+          <li><a href="#semua-produk" onclick="filterProducts('Stainless Steel')">Baut Stainless Steel</a></li>
+          <li><a href="#semua-produk" onclick="filterProducts('Baja Hitam')">Baut Baja Hitam</a></li>
+          <li><a href="#semua-produk" onclick="filterProducts('Galvanis')">Baut Galvanis</a></li>
+          <li><a href="#semua-produk" onclick="filterProducts('Kepala L')">Baut Kepala L</a></li>
+          <li><a href="#semua-produk" onclick="filterProducts('Kepala Bintang')">Baut Kepala Bintang</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul class="footer-links">
+          <li><a href="#tentang-kami" onclick="showSection('tentang-kami')">Tentang Kami</a></li>
+          <li><a href="#kontak" onclick="showSection('kontak')">Hubungi Kami</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <ul class="footer-links">
+          <li><i class="fas fa-phone"></i> 0811111111</li>
+          <li><i class="fas fa-envelope"></i> Bautnusantara@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Jl. Pahlawan No. 123, Jakarta Pusat</li>
+          <li><i class="fas fa-clock"></i> Senin - Sabtu: 08.00 - 17.00 WIB</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Jual Beli Baut Nusantara. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Welcome Popup -->
+<div class="modal" id="welcomePopup">
+  <div class="modal-content" style="max-width: 400px; text-align: center; padding: 40px;">
+    <button class="modal-close" onclick="closeWelcome()">&times;</button>
+    <h2 style="color: var(--primary-color); margin-bottom: 20px;">Selamat Datang di Jual Beli Baut Nusantara!</h2>
+    <p style="margin-bottom: 30px;">Kami menyediakan berbagai macam baut berkualitas untuk kebutuhan industri dan rumah tangga Anda. Dapatkan penawaran menarik dan pengiriman gratis hari ini!</p>
+    <button class="btn btn-primary" onclick="closeWelcome()">Mulai Belanja</button>
+  </div>
+</div>
+
+<!-- Invoice Print Section -->
+<div id="invoice-print" style="display:none;">
+  <h1>Jual Beli Baut Nusantara</h1>
+  <p><strong>Invoice #: </strong>INV-<span id="invoice-id">123456</span></p>
+  <p><strong>Tanggal: </strong><span id="invoice-date"></span></p>
+  
+  <h2>Informasi Pembeli</h2>
+  <p><strong>Nama:</strong> <span id="inv-nama"></span></p>
+  <p><strong>Alamat:</strong> <span id="inv-alamat"></span></p>
+  <p><strong>Telepon:</strong> <span id="inv-telepon"></span></p>
+  
+  <h2>Daftar Produk</h2>
+  <table>
+    <thead>
+      <tr><th>Produk</th><th>Harga</th><th>Qty</th><th>Subtotal</th></tr>
+    </thead>
+    <tbody id="invoice-items"></tbody>
+  </table>
+  
+  <div id="invoice-summary">
+    <table>
+      <tr><td><strong>Subtotal:</strong></td><td id="inv-subtotal"></td></tr>
+      <tr><td><strong>Ongkir:</strong></td><td id="inv-ongkir"></td></tr>
+      <tr><td><strong>Total:</strong></td><td id="inv-total"></td></tr>
+      <tr><td><strong>Pembayaran:</strong></td><td id="inv-bayar"></td></tr>
+      <tr><td><strong>Pengiriman:</strong></td><td id="inv-kirim"></td></tr>
+    </table>
+  </div>
+  
+  <div id="invoice-footer">
+    <p>Terima kasih telah berbelanja di <strong>Jual Beli Baut Nusantara</strong>.</p>
+    <p>Hubungi kami di 0811111111 atau Bautnusantara@gmail.com</p>
+  </div>
+</div>
+
+<script>
+// Global cart variable
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Show loader until page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide loader
+  setTimeout(() => {
+    document.getElementById('loader').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+    }, 500);
+  }, 1000);
+  
+  // Show welcome popup
+  setTimeout(() => {
+    document.getElementById('welcomePopup').classList.add('show');
+  }, 1500);
+  
+  // Show default section
+  showSection('semua-produk');
+  
+  // Update cart count
+  updateCartCount();
+  
+  // Set up dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+  
+  if (savedDarkMode) {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.checked = true;
+  }
+  
+  darkModeToggle.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', this.checked);
+    localStorage.setItem('darkMode', this.checked);
+  });
+  
+  // Set up scroll event for back to top button
+  window.addEventListener('scroll', function() {
+    const backToTopBtn = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  
+  // Set up filter tags
+  const filterTags = document.querySelectorAll('.filter-tag');
+  filterTags.forEach(tag => {
+    tag.addEventListener('click', function() {
+      filterTags.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      
+      const category = this.textContent;
+      filterProducts(category);
+    });
+  });
+  
+  // Set up contact form
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+      contactForm.reset();
+    });
+  }
+});
+
+// Function to close welcome popup
+function closeWelcome() {
+  document.getElementById('welcomePopup').classList.remove('show');
+}
+
+// Function to scroll to top
+document.getElementById('backToTop').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Function to show sections
+function showSection(id) {
+  // Hide all sections
+  document.querySelectorAll('.content').forEach(section => {
+    section.classList.add('d-none');
+  });
+  
+  // Show the selected section
+  document.getElementById(id).classList.remove('d-none');
+  
+  // Hide cart section
+  document.getElementById('keranjang').classList.add('d-none');
+  
+  // Update active navigation link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + id) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Scroll to top
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Function to filter products
+function filterProducts(category) {
+  showSection('semua-produk');
+  
+  const productCards = document.querySelectorAll('.product-card');
+  
+  if (category === 'Semua') {
+    productCards.forEach(card => {
+      card.style.display = '';
+    });
+    return;
+  }
+  
+  productCards.forEach(card => {
+    const productCategory = card.querySelector('.product-category').textContent;
+    if (productCategory === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Function to handle search
+function handleSearch(event) {
+  if (event) event.preventDefault();
+  
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  
+  if (!searchTerm) {
+    return;
+  }
+  
+  showSection('semua-produk');
+  
+  const productCards = document.querySelectorAll('.product-card');
+  let foundProducts = false;
+  
+  productCards.forEach(card => {
+    const productTitle = card.querySelector('.product-title').textContent.toLowerCase();
+    const productCategory = card.querySelector('.product-category').textContent.toLowerCase();
+    
+    if (productTitle.includes(searchTerm) || productCategory.includes(searchTerm)) {
+      card.style.display = '';
+      foundProducts = true;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  
+  // If no products found, show message
+  if (!foundProducts) {
+    const productGrid = document.querySelector('#semua-produk .product-grid');
+    productGrid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+        <div style="font-size: 60px; color: var(--light-border); margin-bottom: 20px;">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>Tidak ditemukan produk yang sesuai dengan pencarian Anda.</h3>
+        <p>Silakan coba dengan kata kunci lain.</p>
+      </div>
+    `;
+  }
+}
+
+// Function to show cart
+function showCart() {
+  // Hide all sections
+  document.querySelectorAll('.content').forEach(section => {
+    section.classList.add('d-none');
+  });
+  
+  // Show cart section
+  document.getElementById('keranjang').classList.remove('d-none');
+  
+  // Check if cart is empty
+  if (cart.length === 0) {
+    document.getElementById('emptyCart').classList.remove('d-none');
+    document.getElementById('cartContent').classList.add('d-none');
+  } else {
+    document.getElementById('emptyCart').classList.add('d-none');
+    document.getElementById('cartContent').classList.remove('d-none');
+    renderCart();
+  }
+  
+  // Remove active class from nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+  });
+}
+
+// Function to add item to cart
+function addToCart(productId, productName, price, image, normalPrice = null) {
+  // Check if product already exists in cart
+  const existingItem = cart.find(item => item.id === productId);
+  
+  if (existingItem) {
+    // If this is a discounted product and already in cart, use normal price
+    if (normalPrice !== null) {
+      existingItem.price = normalPrice;
+      existingItem.isDiscounted = false;
+    }
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: productId,
+      name: productName,
+      price: price,
+      image: image,
+      quantity: 1,
+      isDiscounted: normalPrice !== null, // true if this is a discounted product
+      normalPrice: normalPrice // store the normal price for reference
+    });
+  }
+  
+  // Save to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+  
+  // Update cart count
+  updateCartCount();
+  
+  // Show success notification
+  showNotification(`${productName} telah ditambahkan ke keranjang`);
+}
+
+// Function to show notification
+function showNotification(message) {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.style.position = 'fixed';
+  notification.style.bottom = '20px';
+  notification.style.right = '20px';
+  notification.style.backgroundColor = 'var(--accent-color)';
+  notification.style.color = 'white';
+  notification.style.padding = '12px 20px';
+  notification.style.borderRadius = 'var(--radius-md)';
+  notification.style.boxShadow = 'var(--shadow-md)';
+  notification.style.zIndex = '9999';
+  notification.style.display = 'flex';
+  notification.style.alignItems = 'center';
+  notification.style.gap = '10px';
+  notification.style.transform = 'translateY(100px)';
+  notification.style.opacity = '0';
+  notification.style.transition = 'all 0.3s ease';
+  
+  notification.innerHTML = `
+    <i class="fas fa-check-circle" style="font-size: 20px;"></i>
+    <span>${message}</span>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Show notification
+  setTimeout(() => {
+    notification.style.transform = 'translateY(0)';
+    notification.style.opacity = '1';
+  }, 100);
+  
+  // Hide notification after 3 seconds
+  setTimeout(() => {
+    notification.style.transform = 'translateY(100px)';
+    notification.style.opacity = '0';
+    
+    // Remove notification after animation
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+// Function to update cart count
+function updateCartCount() {
+  const count = cart.reduce((total, item) => total + item.quantity, 0);
+  
+  const cartCountElements = document.querySelectorAll('.cart-count');
+  cartCountElements.forEach(element => {
+    element.textContent = count;
+    
+    // Add animation effect
+    element.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+      element.style.transform = 'scale(1)';
+    }, 300);
+  });
+}
+
+// Function to render cart
+function renderCart() {
+  const cartBody = document.getElementById('cart-items-body');
+  cartBody.innerHTML = '';
+  
+  let subtotal = 0;
+  
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    subtotal += itemTotal;
+    
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td data-label="Produk">
+        <div class="cart-product">
+          <img src="${item.image}" alt="${item.name}" class="cart-product-image">
+          <div class="cart-product-info">
+            <h4>${item.name}</h4>
+            ${item.isDiscounted ? '<p>*Berlaku hanya sekali beli</p>' : ''}
+          </div>
+        </div>
+      </td>
+      <td data-label="Harga">Rp ${item.price.toLocaleString('id-ID')}</td>
+      <td data-label="Jumlah">
+        <div class="cart-quantity">
+          <button class="quantity-btn" onclick="changeQuantity(${index}, -1)">-</button>
+          <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="changeQuantity(${index}, 0, this.value)">
+          <button class="quantity-btn" onclick="changeQuantity(${index}, 1)">+</button>
+        </div>
+      </td>
+      <td data-label="Subtotal">Rp ${itemTotal.toLocaleString('id-ID')}</td>
+      <td data-label="Aksi">
+        <button class="cart-remove" onclick="removeFromCart(${index})">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    `;
+    
+    cartBody.appendChild(row);
+  });
+  
+  // Calculate shipping cost
+  const shippingCost = subtotal >= 50000 ? 0 : 15000;
+  const total = subtotal + shippingCost;
+  
+  // Update totals
+  document.getElementById('cart-subtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+  document.getElementById('shipping-cost').textContent = shippingCost === 0 ? 'Gratis' : `Rp ${shippingCost.toLocaleString('id-ID')}`;
+  document.getElementById('cart-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+}
+
+// Function to change quantity
+function changeQuantity(index, change, newValue) {
+  if (newValue !== undefined) {
+    cart[index].quantity = parseInt(newValue) || 1;
+  } else {
+    cart[index].quantity += change;
+    if (cart[index].quantity < 1) cart[index].quantity = 1;
+  }
+  
+  // If this was a discounted product and quantity is increased beyond 1, switch to normal price
+  if (cart[index].isDiscounted && cart[index].quantity > 1 && cart[index].normalPrice) {
+    cart[index].price = cart[index].normalPrice;
+    cart[index].isDiscounted = false;
+  }
+  
+  // Save and update
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+  updateCartCount();
+}
+
+// Function to remove item from cart
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  
+  if (cart.length === 0) {
+    document.getElementById('emptyCart').classList.remove('d-none');
+    document.getElementById('cartContent').classList.add('d-none');
+  } else {
+    renderCart();
+  }
+  
+  updateCartCount();
+}
+
+// Function to start checkout
+function startCheckout() {
+  document.getElementById('checkoutSteps').classList.remove('d-none');
+  
+  // Reset step indicator
+  document.querySelectorAll('.step').forEach(step => {
+    step.classList.remove('active');
+    step.classList.remove('completed');
+  });
+  
+  document.querySelector('.step[data-step="1"]').classList.add('active');
+  
+  // Reset checkout steps
+  document.querySelectorAll('.checkout-step').forEach(step => {
+    step.classList.remove('active');
+  });
+  
+  document.getElementById('step-1').classList.add('active');
+  
+  // Scroll to checkout steps
+  document.getElementById('checkoutSteps').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to navigate checkout steps
+function goToStep(step) {
+  // Validate data in step 1
+  if (step === 2) {
+    const nama = document.getElementById('inputNama').value.trim();
+    const alamat = document.getElementById('inputAlamat').value.trim();
+    const telepon = document.getElementById('inputTelepon').value.trim();
+    
+    if (!nama || !alamat || !telepon) {
+      showNotification('Mohon lengkapi semua data kontak terlebih dahulu.');
+      return;
+    }
+  }
+  
+  // Update step indicator
+  document.querySelectorAll('.step').forEach(s => {
+    const stepNum = parseInt(s.getAttribute('data-step'));
+    
+    if (stepNum < step) {
+      s.classList.remove('active');
+      s.classList.add('completed');
+    } else if (stepNum === step) {
+      s.classList.add('active');
+      s.classList.remove('completed');
+    } else {
+      s.classList.remove('active');
+      s.classList.remove('completed');
+    }
+  });
+  
+  // Update checkout steps
+  document.querySelectorAll('.checkout-step').forEach(s => {
+    s.classList.remove('active');
+  });
+  
+  document.getElementById(`step-${step}`).classList.add('active');
+  
+  // Special handling for step 2
+  if (step === 2) {
+    // Prepare order summary
+    const produkCheckout = document.getElementById('produkCheckout');
+    produkCheckout.innerHTML = '';
+    
+    let subtotal = 0;
+    
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+      
+      const itemDiv = document.createElement('div');
+      itemDiv.style.display = 'flex';
+      itemDiv.style.justifyContent = 'space-between';
+      itemDiv.style.marginBottom = '10px';
+      itemDiv.style.padding = '10px';
+      itemDiv.style.backgroundColor = 'var(--light-gray)';
+      itemDiv.style.borderRadius = 'var(--radius-sm)';
+      
+      itemDiv.innerHTML = `
+        <div>
+          <strong>${item.name}</strong> x ${item.quantity}
+        </div>
+        <div>Rp ${(item.price * item.quantity).toLocaleString('id-ID')}</div>
+      `;
+      
+      produkCheckout.appendChild(itemDiv);
+    });
+    
+    // Calculate shipping cost
+    const ongkir = subtotal >= 50000 ? 0 : 15000;
+    const total = subtotal + ongkir;
+    
+    // Update totals
+    document.getElementById('checkoutSubtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+    document.getElementById('checkoutOngkir').textContent = ongkir === 0 ? 'Gratis' : `Rp ${ongkir.toLocaleString('id-ID')}`;
+    document.getElementById('checkoutTotal').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+  }
+  
+  // Special handling for step 4
+  if (step === 4) {
+    // Display user information
+    document.getElementById('namaAkhir').textContent = document.getElementById('inputNama').value;
+    document.getElementById('metodeAkhir').textContent = document.getElementById('inputMetodePembayaran').value;
+    document.getElementById('pengirimanAkhir').textContent = document.getElementById('inputMetodePengiriman').value;
+    document.getElementById('alamatAkhir').textContent = document.getElementById('inputAlamat').value;
+    
+    // Clear cart after successful checkout
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+  
+  // Scroll to active step
+  document.getElementById(`step-${step}`).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to generate invoice
+function generateInvoice() {
+  const today = new Date().toLocaleDateString('id-ID');
+  const invoiceId = Math.floor(100000 + Math.random() * 900000);
+  
+  document.getElementById('invoice-id').textContent = invoiceId;
+  document.getElementById('invoice-date').textContent = today;
+  document.getElementById('inv-nama').textContent = document.getElementById('inputNama').value;
+  document.getElementById('inv-alamat').textContent = document.getElementById('inputAlamat').value;
+  document.getElementById('inv-telepon').textContent = document.getElementById('inputTelepon').value;
+  document.getElementById('inv-bayar').textContent = document.getElementById('inputMetodePembayaran').value;
+  document.getElementById('inv-kirim').textContent = document.getElementById('inputMetodePengiriman').value;
+  
+  // Create invoice items
+  const tbody = document.getElementById('invoice-items');
+  tbody.innerHTML = '';
+  
+  let subtotal = 0;
+  
+  // Note: Since cart is already cleared at the final step,
+  // we need to recreate a sample order here
+  const sampleItems = [
+    { name: 'Baut Stainless Steel 8x25', price: 4500, quantity: 2 },
+    { name: 'Baut Kepala L 8x25', price: 5200, quantity: 1 },
+    { name: 'Baut Roofing 5cm Anti Karat', price: 6000, quantity: 3 }
+  ];
+  
+  sampleItems.forEach(item => {
+    const tr = document.createElement('tr');
+    const total = item.price * item.quantity;
+    subtotal += total;
+    
+    tr.innerHTML = `
+      <td>${item.name}</td>
+      <td>Rp ${item.price.toLocaleString('id-ID')}</td>
+      <td>${item.quantity}</td>
+      <td>Rp ${total.toLocaleString('id-ID')}</td>
+    `;
+    
+    tbody.appendChild(tr);
+  });
+  
+  const ongkir = subtotal >= 50000 ? 0 : 15000;
+  const total = subtotal + ongkir;
+  
+  document.getElementById('inv-subtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+  document.getElementById('inv-ongkir').textContent = ongkir === 0 ? 'Gratis' : `Rp ${ongkir.toLocaleString('id-ID')}`;
+  document.getElementById('inv-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+  
+  // Show invoice
+  document.getElementById('invoice-print').style.display = 'block';
+  
+  // Print
+  window.print();
+  
+  // Hide invoice
+  document.getElementById('invoice-print').style.display = 'none';
+}
+</script>
+</body>
+</html>
